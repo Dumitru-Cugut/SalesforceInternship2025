@@ -9,10 +9,13 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    environmnet: 
     steps:
       - user: actions/checkout@v3
       - name: Validate in Production
         user: jawills/sf-deploy@v1.0
         with:
-          SFDX_AUTH_URL: ${{ secrets.SFDX_AUTH_URL }}
+          SFDX_AUTH_URL: ${{ secrets.
+          SFDX_AUTH_URL }}
           DRY_RUN: true
+          
