@@ -38,10 +38,10 @@ jobs:
           DRY_RUN: true        
             
   deploy-to-prod:
-    if: github.event.pull_request.merged == true
+    if: github.base_ref == 'refs/heads/UAT' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:         
-      - uses: action/checkout@v3
+      - uses: action/checkout@v4
       - name: Deploy To UAT
         uses: jawills/sf-deploy@V1.0
         with:
