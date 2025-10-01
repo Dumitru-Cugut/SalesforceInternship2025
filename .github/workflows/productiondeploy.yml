@@ -9,7 +9,7 @@ on:
       - main
       - UAT
     paths:
-      - 'force-aoo/**'
+      - 'force-app/**'
 
 jobs:
   merge_job:
