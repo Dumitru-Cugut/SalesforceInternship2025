@@ -1,11 +1,11 @@
-name: UAT Validation/Deployment
+name: Production Validation/Deployment
 
 on:
   workflow_dispatch:
   pull_request:
     types: [ 'opened', 'closed' ] 
     branches:
-      - 'UAT'
+      - 'main'
     paths:
       - 'force-app/**'
 jobs:
@@ -38,10 +38,10 @@ jobs:
           DRY_RUN: true         
             
   deploy-to-prod:
-    if: github.event.pull_request.merged == true
+    if: github.base_ref == 'refs/heads/main' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:   
-      - uses: action/checkout@v3
+      - uses: action/checkout@v4
       - name: Deploy To Production
         uses: jawills/sf-deploy@V1.0
         with:
