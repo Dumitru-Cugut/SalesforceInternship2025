@@ -5,13 +5,14 @@ on:
   pull_request: 
     branches:
       - main
+      - UAT
     paths:
       - 'force-app/**'
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-     # Setup Node.js
+      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -20,10 +21,27 @@ jobs:
       - name: Install Salesforce CLI
         run: |
           npm install -g @salesforce/cli
-          sf --version    
+          sf --version  
+          
+
+  validate-to-uat:
+    if: github.ref == 'refs/heads/UAT'
+    runs-on: ubuntu-latest
+    steps:      
+      - uses: actions/checkout@v4
+      - name: Validate in UAT
+        uses: jawills/sf-deploy@v1.0
+        with:
+          SFDX_AUTH_URL: ${{ secrets.SFDX_UAT_AUTH_URL }}
+          DRY_RUN: true        
+            
+  validate-to-prod:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:      
       - uses: actions/checkout@v4
       - name: Validate in Production
         uses: jawills/sf-deploy@v1.0
         with:
           SFDX_AUTH_URL: ${{ secrets.SFDX_AUTH_URL }}
-          DRY_RUN: true
+          DRY_RUN: true     
