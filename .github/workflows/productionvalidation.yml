@@ -1,10 +1,12 @@
-name: UAT Validation/Deployment
+name: Validation Production Pull Request
 
 on:
   workflow_dispatch:
   pull_request:
-    types: [ 'opened', 'closed' ] 
+    types:
+      - 'opened'
     branches:
+      - 'main'
       - 'UAT'
     paths:
       - 'force-app/**'
@@ -27,7 +29,7 @@ jobs:
           echo "refs/heads/UAT = ${{github.ref}}"
 
   validate-to-uat:
-    if: github.base_ref == 'refs/heads/UAT'
+    if: github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:      
       - uses: actions/checkout@v4
@@ -37,14 +39,13 @@ jobs:
           SFDX_AUTH_URL: ${{ secrets.SFDX_UAT_AUTH_URL }}
           DRY_RUN: true        
             
-  deploy-to-prod:
-    if: github.base_ref == 'refs/heads/UAT' && github.event.pull_request.merged == true
+  validate-to-prod:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    steps:         
-      - uses: action/checkout@v4
-      - name: Deploy To UAT
-        uses: jawills/sf-deploy@V1.0
+    steps:      
+      - uses: actions/checkout@v4
+      - name: Validate in Production
+        uses: jawills/sf-deploy@v1.0
         with:
-          SFDX_AUTH_URL: ${{ secrets.SFDX_UAT_AUTH_URL }}
-          DRY_RUN: false
-          TEST_LEVEL: RunLocalTests  
+          SFDX_AUTH_URL: ${{ secrets.SFDX_AUTH_URL }}
+          DRY_RUN: true     
