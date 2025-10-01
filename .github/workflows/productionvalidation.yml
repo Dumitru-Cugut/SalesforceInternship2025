@@ -2,10 +2,12 @@ name: Validation Production Pull Request
 
 on:
   workflow_dispatch:
-  pull_request: 
+  pull_request:
+    types:
+      - 'opened'
     branches:
-      - main
-      - UAT
+      - 'main'
+      - 'UAT'
     paths:
       - 'force-app/**'
 jobs:
