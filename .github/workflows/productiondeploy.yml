@@ -27,11 +27,12 @@ jobs:
           npm install -g @salesforce/cli
           sf --version    
       - uses: actions/checkout@v4
-      - name: Validate in Production
+      - name: Deploy in Production
         uses: jawills/sf-deploy@v1.0
         with:
           SFDX_AUTH_URL: ${{ secrets.SFDX_AUTH_URL }}
-          DRY_RUN: true
+          DRY_RUN: false
+          TEST_LEVEL: RunLocalTests
           
   close_job:
     #this job will only run if the PR has been closed without being merged
