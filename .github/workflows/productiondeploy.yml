@@ -6,6 +6,7 @@ on:
     types: [ closed ]
     branches:
       - main
+      - UAT
     paths:
       - 'force-aoo/**'
 
@@ -14,7 +15,34 @@ jobs:
     #this job will only run if the PR has been merged
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-    steps:
+    steps:  
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      # Install Salesforce CLI via NPM
+      - name: Install Salesforce CLI
+        run: |
+          npm install -g @salesforce/cli
+          sf --version  
+
+  deploy-to-uat:
+    if: github.ref == 'refs/heads/UAT'
+    runs-on: ubuntu-latest
+    steps:     
+      - uses: action/checkout@v3
+      - name: Deploy To UAT
+        uses: jawills/sf-deploy@V1.0
+        with:
+          SFDX_AUTH_URL: ${{ secrets.SFDX_UAT_AUTH_URL }}
+          DRY_RUN: false
+          TEST_LEVEL: RunLocalTests
+
+  deploy-to-prod:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:   
       - uses: action/checkout@v3
       - name: Deploy To Production
         uses: jawills/sf-deploy@V1.0
@@ -22,19 +50,7 @@ jobs:
           SFDX_AUTH_URL: ${{ secrets.SFDX_AUTH_URL }}
           DRY_RUN: false
           TEST_LEVEL: RunLocalTests
-                    
-      # Setup Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
 
-      # Install Salesforce CLI via NPM
-      - name: Install Salesforce CLI
-        run: |
-          npm install -g @salesforce/cli
-          sf --version  
-          
   close_job:
     #this job will only run if the PR has been closed without being merged
     if: github.event.pull_request.merged == false
