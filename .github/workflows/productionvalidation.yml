@@ -29,7 +29,7 @@ jobs:
           echo "refs/heads/UAT = ${{github.ref}}"
 
   validate-to-uat:
-    if: github.ref == 'refs/heads/UAT'
+    if: github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:      
       - uses: actions/checkout@v4
