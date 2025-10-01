@@ -5,6 +5,9 @@
 # Salesforce cache
 .sf/
 .sfdx/
+manifest
+certs
+.forceignore
 .localdevserver/
 deploy-options.json
 
@@ -15,6 +18,7 @@ deploy-options.json
 coverage/
 
 # Logs
+scripts/*
 logs
 *.log
 npm-debug.log*
