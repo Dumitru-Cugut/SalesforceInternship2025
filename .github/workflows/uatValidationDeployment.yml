@@ -25,6 +25,7 @@ jobs:
           echo "Branch = ${{ github.ref_name }}"
           echo "Event = ${{ github.event_name }}"
           echo "refs/heads/UAT = ${{github.ref}}"
+          echo "base_refs/heads/UAT = ${{github.base_ref}}"
 
   validate-to-uat:
     if: github.base_ref == 'refs/heads/UAT'
@@ -37,7 +38,7 @@ jobs:
           SFDX_AUTH_URL: ${{ secrets.SFDX_UAT_AUTH_URL }}
           DRY_RUN: true        
             
-  deploy-to-prod:
+  deploy-to-uat:
     if: github.base_ref == 'refs/heads/UAT' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:         
