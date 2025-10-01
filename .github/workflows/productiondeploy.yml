@@ -7,7 +7,7 @@ on:
     branches:
       - main
     paths:
-      - 'force-aoo/**'
+      - 'force-app/**'
 
 jobs:
   merge_job:
