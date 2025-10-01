@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate in Production
-        uses: jawills/sf-deploy@1.0
+        uses: jawills/sf-deploy@v1.0
         with:
           SFDX_AUTH_URL: ${{ secrets.SFDX_AUTH_URL }}
           DRY_RUN: true
