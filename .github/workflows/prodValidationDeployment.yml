@@ -24,9 +24,10 @@ jobs:
           sf --version  
           echo "Branch = ${{ github.ref_name }}"
           echo "Event = ${{ github.event_name }}"
-          echo "refs/heads/UAT = ${{github.ref}}"
+          echo "refs/heads/main = ${{github.ref}}"
+          echo "base_refs/heads/main = ${{github.base_ref}}"
 
-  validate-to-uat:
+  validate-to-prod:
     if: github.base_ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:      
