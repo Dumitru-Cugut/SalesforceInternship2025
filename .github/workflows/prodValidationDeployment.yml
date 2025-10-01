@@ -24,10 +24,11 @@ jobs:
           sf --version  
           echo "Branch = ${{ github.ref_name }}"
           echo "Event = ${{ github.event_name }}"
-          echo "refs/heads/UAT = ${{github.ref}}"
+          echo "refs/heads/main = ${{github.ref}}"
+          echo "base_refs/heads/main = ${{github.base_ref}}"
 
-  validate-to-uat:
-    if: github.base_ref == 'refs/heads/main'
+  validate-to-prod:
+    if: github.base_ref == 'main'
     runs-on: ubuntu-latest
     steps:      
       - uses: actions/checkout@v4
@@ -38,7 +39,7 @@ jobs:
           DRY_RUN: true         
             
   deploy-to-prod:
-    if: github.base_ref == 'refs/heads/main' && github.event.pull_request.merged == true
+    if: github.base_ref == 'main' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:   
       - uses: action/checkout@v4
