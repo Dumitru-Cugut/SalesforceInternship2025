@@ -1,0 +1,13 @@
+# Default: require at least one core dev for any change
+*   @Dumitru-Cugut
+# Apex changes reviewers
+force-app/main/default/classes/*   @dimastirbuendava
+
+# Flows changes reviewers
+force-app/main/default/flows/*     @Dumitru-Cugut
+
+# Metadata changes reviewers
+force-app/main/default/* @Dumitru-Cugut
+
+# Require Release managers for GitHub Actions workflows
+.github/* @Dumitru-Cugut @dimastirbuendava
