@@ -60,6 +60,6 @@ jobs:
         with:
           source_branch: UAT
           destination_branch: main
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PR_CREATE }}
           pr_title: "${{ github.event.pull_request.title }} : Sync UAT into main"
           pr_body: "Automatically created PR to sync changes from UAT to main."
