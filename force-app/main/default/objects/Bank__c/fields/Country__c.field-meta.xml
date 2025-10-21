@@ -8,6 +8,6 @@
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
-        <valueSetName>ISO_Country_Code</valueSetName>
+        <valueSetName>ISO_Country_Name</valueSetName>
     </valueSet>
 </CustomField>
