@@ -6,9 +6,9 @@
         <label>Afghanistan</label>
     </customValue>
     <customValue>
-        <fullName>Ã…land Islands</fullName>
+        <fullName>Åland Islands</fullName>
         <default>false</default>
-        <label>Ã…land Islands</label>
+        <label>Åland Islands</label>
     </customValue>
     <customValue>
         <fullName>Albania</fullName>
@@ -161,9 +161,9 @@
         <label>Brazil</label>
     </customValue>
     <customValue>
-        <fullName>British Indian Ocean Territory</fullName>
+        <fullName>British Indian Ocean Territory (the)</fullName>
         <default>false</default>
-        <label>British Indian Ocean Territory</label>
+        <label>British Indian Ocean Territory (the)</label>
     </customValue>
     <customValue>
         <fullName>Brunei Darussalam</fullName>
@@ -236,9 +236,9 @@
         <label>Christmas Island</label>
     </customValue>
     <customValue>
-        <fullName>Cocos (Keeling) Islands</fullName>
+        <fullName>Cocos (Keeling) Islands (the)</fullName>
         <default>false</default>
-        <label>Cocos (Keeling) Islands</label>
+        <label>Cocos (Keeling) Islands (the)</label>
     </customValue>
     <customValue>
         <fullName>Colombia</fullName>
@@ -271,9 +271,9 @@
         <label>Costa Rica</label>
     </customValue>
     <customValue>
-        <fullName>CÃ´te d&apos;Ivoire</fullName>
+        <fullName>Côte d&apos;Ivoire</fullName>
         <default>false</default>
-        <label>CÃ´te d&apos;Ivoire</label>
+        <label>Côte d&apos;Ivoire</label>
     </customValue>
     <customValue>
         <fullName>Croatia</fullName>
@@ -286,9 +286,9 @@
         <label>Cuba</label>
     </customValue>
     <customValue>
-        <fullName>CuraÃ§ao</fullName>
+        <fullName>Curaçao</fullName>
         <default>false</default>
-        <label>CuraÃ§ao</label>
+        <label>Curaçao</label>
     </customValue>
     <customValue>
         <fullName>Cyprus</fullName>
@@ -606,9 +606,9 @@
         <label>Kyrgyzstan</label>
     </customValue>
     <customValue>
-        <fullName>Lao People&apos;s Democratic Republic</fullName>
+        <fullName>Lao People&apos;s Democratic Republic (the)</fullName>
         <default>false</default>
-        <label>Lao People&apos;s Democratic Republic</label>
+        <label>Lao People&apos;s Democratic Republic (the)</label>
     </customValue>
     <customValue>
         <fullName>Latvia</fullName>
@@ -801,9 +801,9 @@
         <label>Nicaragua</label>
     </customValue>
     <customValue>
-        <fullName>Niger</fullName>
+        <fullName>Niger (the)</fullName>
         <default>false</default>
-        <label>Niger</label>
+        <label>Niger (the)</label>
     </customValue>
     <customValue>
         <fullName>Nigeria</fullName>
@@ -821,9 +821,9 @@
         <label>Norfolk Island</label>
     </customValue>
     <customValue>
-        <fullName>Northern Mariana Islands</fullName>
+        <fullName>Northern Mariana Islands (the)</fullName>
         <default>false</default>
-        <label>Northern Mariana Islands</label>
+        <label>Northern Mariana Islands (the)</label>
     </customValue>
     <customValue>
         <fullName>Norway</fullName>
@@ -871,9 +871,9 @@
         <label>Peru</label>
     </customValue>
     <customValue>
-        <fullName>Philippines</fullName>
+        <fullName>Philippines (the)</fullName>
         <default>false</default>
-        <label>Philippines</label>
+        <label>Philippines (the)</label>
     </customValue>
     <customValue>
         <fullName>Pitcairn</fullName>
@@ -901,9 +901,9 @@
         <label>Qatar</label>
     </customValue>
     <customValue>
-        <fullName>RÃ©union</fullName>
+        <fullName>Réunion</fullName>
         <default>false</default>
-        <label>RÃ©union</label>
+        <label>Réunion</label>
     </customValue>
     <customValue>
         <fullName>Romania</fullName>
@@ -921,9 +921,9 @@
         <label>Rwanda</label>
     </customValue>
     <customValue>
-        <fullName>Saint BarthÃ©lemy</fullName>
+        <fullName>Saint Barthélemy</fullName>
         <default>false</default>
-        <label>Saint BarthÃ©lemy</label>
+        <label>Saint Barthélemy</label>
     </customValue>
     <customValue>
         <fullName>Saint Helena, Ascension and Tristan da Cunha</fullName>
@@ -1081,9 +1081,9 @@
         <label>Switzerland</label>
     </customValue>
     <customValue>
-        <fullName>Syrian Arab Republic</fullName>
+        <fullName>Syrian Arab Republic (the)</fullName>
         <default>false</default>
-        <label>Syrian Arab Republic</label>
+        <label>Syrian Arab Republic (the)</label>
     </customValue>
     <customValue>
         <fullName>Taiwan, Province of China</fullName>
@@ -1166,24 +1166,24 @@
         <label>Ukraine</label>
     </customValue>
     <customValue>
-        <fullName>United Arab Emirates</fullName>
+        <fullName>United Arab Emirates (the)</fullName>
         <default>false</default>
-        <label>United Arab Emirates</label>
+        <label>United Arab Emirates (the)</label>
     </customValue>
     <customValue>
-        <fullName>United Kingdom</fullName>
+        <fullName>United Kingdom of Great Britain and Northern Ireland (the)</fullName>
         <default>false</default>
-        <label>United Kingdom</label>
+        <label>United Kingdom of Great Britain and Northern Ireland (the)</label>
     </customValue>
     <customValue>
-        <fullName>United States</fullName>
+        <fullName>United States of America (the)</fullName>
         <default>false</default>
-        <label>United States</label>
+        <label>United States of America (the)</label>
     </customValue>
     <customValue>
-        <fullName>United States Minor Outlying Islands</fullName>
+        <fullName>United States Minor Outlying Islands (the)</fullName>
         <default>false</default>
-        <label>United States Minor Outlying Islands</label>
+        <label>United States Minor Outlying Islands (the)</label>
     </customValue>
     <customValue>
         <fullName>Uruguay</fullName>
@@ -1245,6 +1245,7 @@
         <default>false</default>
         <label>Zimbabwe</label>
     </customValue>
+    <description>Select the official country from the standardized ISO list</description>
     <masterLabel>ISO Country Name</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>
