@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Valid_Country_Name_Format</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+  ISPICKVAL(Country__c, &quot;&quot;),
+
+  LEN(TEXT(Country__c)) &gt; 50,
+
+  NOT(REGEX(LEFT(TEXT(Country__c), 1), &quot;[A-Z]&quot;)),
+
+  TEXT(Country__c) != TRIM(TEXT(Country__c))
+)</errorConditionFormula>
+    <errorDisplayField>Country__c</errorDisplayField>
+    <errorMessage>Country must be a valid name (e.g., Germany, United States of America), start with uppercase letter, contain only letters and spaces, and be ≤50 characters.</errorMessage>
+</ValidationRule>
