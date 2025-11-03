@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalClientApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>sysadmin@mycompany.com</contactEmail>
+    <description>Bank API for External Users</description>
+    <distributionState>Local</distributionState>
+    <iconUrl>https://login.salesforce.com/logos/Salesforce/Community/icon.png</iconUrl>
+    <isProtected>false</isProtected>
+    <label>Bank API Integration</label>
+    <logoUrl>https://login.salesforce.com/logos/Salesforce/Community/logo.png</logoUrl>
+    <orgScopedExternalApp>00Dg5000000Gljb:Bank_API_Integration</orgScopedExternalApp>
+</ExternalClientApplication>
