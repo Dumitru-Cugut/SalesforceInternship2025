@@ -50,16 +50,16 @@ jobs:
           DRY_RUN: false
           TEST_LEVEL: RunLocalTests  
 
-  pull-request-creation:
-    if: github.base_ref == 'UAT' && github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Create Pull Request to Production
-        uses: repo-sync/pull-request@v2
-        with:
-          source_branch: UAT
-          destination_branch: main
-          github_token: ${{ secrets.PR_CREATE }}
-          pr_title: "${{ github.event.pull_request.title }} : Sync UAT into main"
-          pr_body: "Automatically created PR to sync changes from UAT to main."
+  #pull-request-creation:
+  #  if#: github.base_ref == 'UAT' && github.event.pull_request.merged == true
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - uses: actions/checkout@v4
+  #    - name: Create Pull Request to Production
+  #      uses: repo-sync/pull-request@v2
+  #      with:
+  #        source_branch: UAT
+  #        destination_branch: main
+  #        github_token: ${#{ secrets.PR_CREATE }}
+  #        pr_title: "${#{ github.event.pull_request.title }} : Sync UAT into main"
+  #        pr_body: "Automatically created PR to sync changes from UAT to main."
