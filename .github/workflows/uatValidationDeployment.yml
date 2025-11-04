@@ -26,6 +26,7 @@ jobs:
           echo "Event = ${{ github.event_name }}"
           echo "refs/heads/UAT = ${{github.ref}}"
           echo "base_refs/heads/UAT = ${{github.base_ref}}"
+          echo "github.event.action = ${{github.event.action}}"
 
   validate-to-uat:
     if: github.base_ref == 'UAT'
