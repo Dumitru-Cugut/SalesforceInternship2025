@@ -3,7 +3,7 @@ name: UAT Validation/Deployment
 on:
   workflow_dispatch:
   pull_request:
-    types: [ 'opened', 'closed' ] 
+    types: [ 'opened', 'closed',  'synchronize'] 
     branches:
       - 'UAT'
     paths:
@@ -37,7 +37,35 @@ jobs:
         with:
           SFDX_AUTH_URL: ${{ secrets.SFDX_UAT_AUTH_URL }}
           DRY_RUN: true        
-            
+         
+  rerun:
+    if: github.base_ref == 'UAT' && github.event.action == 'synchronize'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Re-run all workflows for this PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const workflows = await github.rest.actions.listRepoWorkflows({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+
+            for (const wf of workflows.data.workflows) {
+              // Skip this workflow to avoid infinite loop
+              if (wf.name === "Rerun all workflows on PR synchronize") continue;
+
+              await github.rest.actions.createWorkflowDispatch({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                workflow_id: wf.id,
+                ref: context.payload.pull_request.head.ref,
+              });
+
+              console.log(`Triggered workflow: ${wf.name}`);
+            }
+
   deploy-to-uat:
     if: github.base_ref == 'UAT' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
@@ -50,16 +78,60 @@ jobs:
           DRY_RUN: false
           TEST_LEVEL: RunLocalTests  
 
-  #pull-request-creation:
-  #  if#: github.base_ref == 'UAT' && github.event.pull_request.merged == true
-  #  runs-on: ubuntu-latest
-  #  steps:
-  #    - uses: actions/checkout@v4
-  #    - name: Create Pull Request to Production
-  #      uses: repo-sync/pull-request@v2
-  #      with:
-  #        source_branch: UAT
-  #        destination_branch: main
-  #        github_token: ${#{ secrets.PR_CREATE }}
-  #        pr_title: "${#{ github.event.pull_request.title }} : Sync UAT into main"
-  #        pr_body: "Automatically created PR to sync changes from UAT to main."
+  syncronize-branchest:
+    if: github.base_ref == 'UAT' && github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:         
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.ref }}
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: List all open branches
+        id: branches
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branches = await github.rest.repos.listBranches({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              protected: false,
+            });
+
+            // Filter out the base branch (the one merged into)
+            const openBranches = branches.data
+              .filter(b => b.name !== context.payload.pull_request.base.ref)
+              .map(b => b.name);
+
+            core.setOutput("branch_list", JSON.stringify(openBranches));
+            console.log("Branches to sync:", openBranches);
+      - name: Merge base branch into all open branches
+        run: |
+          BASE=${{ github.event.pull_request.base.ref }}
+          for BRANCH in $(echo '${{ steps.branches.outputs.branch_list }}' | jq -r '.[]'); do
+            echo "🔄 Syncing $BASE into $BRANCH ..."
+            git fetch origin $BRANCH
+            git checkout $BRANCH
+            git merge origin/$BASE --no-edit || true
+            git push origin $BRANCH || echo "⚠️ Could not push to $BRANCH"
+          done
+
+  pull-request-creation:
+    if: github.base_ref == 'UAT' && github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create Pull Request to Production
+        uses: repo-sync/pull-request@v2
+        with:
+          source_branch: UAT
+          destination_branch: main
+          github_token: ${#{ secrets.PR_CREATE }}
+          pr_title: "${#{ github.event.pull_request.title }} : Sync UAT into main"
+          pr_body: "Automatically created PR to sync changes from UAT to main."
