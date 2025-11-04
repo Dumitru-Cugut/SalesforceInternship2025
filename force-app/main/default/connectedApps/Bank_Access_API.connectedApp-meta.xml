@@ -4,7 +4,6 @@
     <label>Bank Access API</label>
     <oauthConfig>
         <callbackUrl>https://openidconnect.herokuapp.com/callback</callbackUrl>
-        <consumerKey></consumerKey>
         <isAdminApproved>false</isAdminApproved>
         <isClientCredentialEnabled>false</isClientCredentialEnabled>
         <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
