@@ -20,6 +20,12 @@
         <closed>false</closed>
     </standardValue>
     <standardValue>
+        <fullName>Rejected</fullName>
+        <default>false</default>
+        <label>Rejected</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
         <fullName>Closed</fullName>
         <default>false</default>
         <label>Closed</label>
