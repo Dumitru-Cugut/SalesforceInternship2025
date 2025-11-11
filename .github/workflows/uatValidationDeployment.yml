@@ -3,7 +3,7 @@ name: UAT Validation/Deployment
 on:
   workflow_dispatch:
   pull_request:
-    types: [ 'opened', 'closed', 'synchronize' ] 
+    types: [ 'opened', 'closed', 'synchronize', 'reopened', 'edited'] 
     branches:
       - 'UAT'
     paths:
