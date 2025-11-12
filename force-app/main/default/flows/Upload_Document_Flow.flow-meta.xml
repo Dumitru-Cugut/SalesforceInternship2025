@@ -45,7 +45,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Confirmation_screen</targetReference>
+                <targetReference>Document_uploaded_checkbox_True</targetReference>
             </connector>
             <label>yes</label>
         </rules>
@@ -60,7 +60,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>No_Files_Confirmation_Screen</targetReference>
+                <targetReference>Document_uploaded_checkbox_False</targetReference>
             </connector>
             <label>no</label>
         </rules>
@@ -95,7 +95,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Document_uploaded_checkbox</targetReference>
+            <targetReference>Count_uploaded_files</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -110,13 +110,36 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <description>Updates the value of the &quot;Document uploaded&quot; checkbox</description>
-        <name>Document_uploaded_checkbox</name>
-        <label>Document uploaded checkbox</label>
+        <name>Document_uploaded_checkbox_False</name>
+        <label>Document uploaded checkbox False</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Count_uploaded_files</targetReference>
+            <targetReference>No_Files_Confirmation_Screen</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Document_uploaded__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Document_uploaded_checkbox_True</name>
+        <label>Document uploaded checkbox True</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Confirmation_screen</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
