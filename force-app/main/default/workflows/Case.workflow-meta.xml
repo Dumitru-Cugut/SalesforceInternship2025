@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Notification_of_rejection</fullName>
+        <description>Notification of rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Notification_of_Bank_Application_Rejection</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_of_submission</fullName>
+        <description>Notification of submission</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Notification_of_Bank_Application_Submission</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>ChangePriorityToHigh</fullName>
+        <field>Priority</field>
+        <literalValue>High</literalValue>
+        <name>Changes the case priority to high.</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Case_Owner</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Manage_Bank_Accounts</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Change Case Owner</name>
+        <notifyAssignee>true</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Case_Owner_v1</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Manage_Bank_Accounts</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Change Case Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Case_Status_to_New</fullName>
+        <field>Status</field>
+        <literalValue>New</literalValue>
+        <name>Change Case Status to New</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Level_1_rejected</fullName>
+        <field>Status</field>
+        <literalValue>Rejected</literalValue>
+        <name>Level 1 rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Level_2_approve</fullName>
+        <field>Status</field>
+        <literalValue>Approved</literalValue>
+        <name>Level 2 approve</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Level_2_rejected</fullName>
+        <field>Status</field>
+        <literalValue>Rejected</literalValue>
+        <name>Level 2 rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Status_to_Bank_Authorized</fullName>
+        <field>Status</field>
+        <literalValue>Approved</literalValue>
+        <name>Set Status to Bank Authorized</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Status_to_Rejected</fullName>
+        <field>Status</field>
+        <literalValue>New</literalValue>
+        <name>Set Status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Status_to_Submitted_for_Approval</fullName>
+        <field>Status</field>
+        <literalValue>Submitted for approval</literalValue>
+        <name>Set Status to Submitted for Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>
