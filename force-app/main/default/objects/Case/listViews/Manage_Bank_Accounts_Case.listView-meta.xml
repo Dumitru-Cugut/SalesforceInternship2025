@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manage_Bank_Accounts_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Manage Bank Accounts</label>
+    <queue>Manage_Bank_Accounts</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>
