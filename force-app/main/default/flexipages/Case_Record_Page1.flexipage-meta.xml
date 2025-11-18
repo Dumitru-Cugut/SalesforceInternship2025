@@ -313,6 +313,20 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>hideUpdateButton</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>variant</name>
+                    <value>linear</value>
+                </componentInstanceProperties>
+                <componentName>runtime_sales_pathassistant:pathAssistant</componentName>
+                <identifier>runtime_sales_pathassistant_pathAssistant</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>Tabs</value>
                 </componentInstanceProperties>
@@ -387,6 +401,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Reason</fieldItem>
                 <identifier>RecordReasonField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Bank__c</fieldItem>
+                <identifier>RecordBank_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-b436d18c-63d5-4555-b30e-76134b2ccf32</name>
