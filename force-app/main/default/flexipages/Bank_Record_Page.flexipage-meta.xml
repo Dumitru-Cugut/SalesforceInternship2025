@@ -197,6 +197,25 @@
             </fieldInstance>
         </itemInstances>
         <name>Facet-e0bd2019-fba3-46cb-a49b-b7db8edac6e8</name>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListContainer</componentName>
+                <identifier>force_relatedListContainer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <mode>Replace</mode>
+        <name>relatedTabContent</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -220,7 +239,7 @@
                 <identifier>flexipage_column4</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-c0cec2db-6a30-4295-8ac9-ecf286c88dd0</name>
+        <name>Facet-c0cec2db-6a30-4295-8ac9-ecf286c88dd0</name>>>>>>>> UAT
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
