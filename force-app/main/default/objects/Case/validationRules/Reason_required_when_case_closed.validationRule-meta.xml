@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_required_when_case_closed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Status, &quot;Closed&quot;),
+    ISBLANK(TEXT( Closed_Reason__c ))
+)</errorConditionFormula>
+    <errorDisplayField>Closed_Reason__c</errorDisplayField>
+    <errorMessage>Closed Reason is required when Case is Closed.</errorMessage>
+</ValidationRule>
