@@ -5,6 +5,17 @@
     <businessProcess>Authorization checks</businessProcess>
     <label>Authorization checks</label>
     <picklistValues>
+        <picklist>Closed_Reason__c</picklist>
+        <values>
+            <fullName>Documents Missing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unauthorized</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Origin</picklist>
         <values>
             <fullName>Email</fullName>
