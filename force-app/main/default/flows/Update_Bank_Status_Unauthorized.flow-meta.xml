@@ -49,11 +49,11 @@
             <field>Status</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Closed</stringValue>
+                <stringValue>Rejected</stringValue>
             </value>
         </filters>
         <filters>
-            <field>Closed_Reason__c</field>
+            <field>Rejection_Reason__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Unauthorized</stringValue>
