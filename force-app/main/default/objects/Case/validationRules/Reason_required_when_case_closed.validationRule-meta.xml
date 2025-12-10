@@ -3,7 +3,7 @@
     <fullName>Reason_required_when_case_closed</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
-    ISPICKVAL(Status, &quot;Closed&quot;),
+    ISPICKVAL(Status, &quot;Rejected&quot;),
     ISBLANK(TEXT( Closed_Reason__c ))
 )</errorConditionFormula>
     <errorDisplayField>Closed_Reason__c</errorDisplayField>
