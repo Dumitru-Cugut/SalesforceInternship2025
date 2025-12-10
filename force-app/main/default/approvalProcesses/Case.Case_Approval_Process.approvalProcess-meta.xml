@@ -108,12 +108,6 @@
     </initialSubmissionActions>
     <label>Case Approval Process</label>
     <processOrder>1</processOrder>
-    <recallActions>
-        <action>
-            <name>Change_Case_Status_to_New</name>
-            <type>FieldUpdate</type>
-        </action>
-    </recallActions>
-    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <recordEditability>AdminOnly</recordEditability>
     <showApprovalHistory>true</showApprovalHistory>
 </ApprovalProcess>

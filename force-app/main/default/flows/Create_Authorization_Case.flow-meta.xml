@@ -37,6 +37,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Origin</field>
+            <value>
+                <stringValue>Web</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>RecordTypeId</field>
             <value>
                 <elementReference>Get_Authz_RecordType.Id</elementReference>
@@ -46,6 +52,12 @@
             <field>Status</field>
             <value>
                 <stringValue>New</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Bank Authorization Case</stringValue>
             </value>
         </inputAssignments>
         <object>Case</object>
