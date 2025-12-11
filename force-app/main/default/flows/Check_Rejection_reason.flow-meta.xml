@@ -8,7 +8,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <customErrorMessages>
-            <errorMessage>Please update the &quot;Status&quot; field and enter the Rejection Reason Details page to perform this action.</errorMessage>
+            <errorMessage>Please enter the Rejection Reason in Details page to perform this action.</errorMessage>
             <isFieldError>false</isFieldError>
         </customErrorMessages>
     </customErrors>
