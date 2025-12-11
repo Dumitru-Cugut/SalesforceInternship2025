@@ -13,7 +13,7 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Documents Missing</fullName>
+                <fullName>Documents_Missing</fullName>
                 <default>false</default>
                 <label>Documents Missing</label>
             </value>
@@ -24,11 +24,11 @@
             </value>
         </valueSetDefinition>
         <valueSettings>
-            <controllingFieldValue>Closed</controllingFieldValue>
-            <valueName>Documents Missing</valueName>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>Documents_Missing</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>Closed</controllingFieldValue>
+            <controllingFieldValue>Rejected</controllingFieldValue>
             <valueName>Unauthorized</valueName>
         </valueSettings>
     </valueSet>
