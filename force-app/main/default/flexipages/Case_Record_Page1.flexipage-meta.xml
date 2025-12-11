@@ -199,7 +199,7 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Closed_Reason__c</fieldItem>
+                <fieldItem>Record.Rejection_Reason__c</fieldItem>
                 <identifier>RecordClosed_Reason_cField</identifier>
             </fieldInstance>
         </itemInstances>
