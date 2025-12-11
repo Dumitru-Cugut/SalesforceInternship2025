@@ -86,10 +86,6 @@
             <name>Notification_of_rejection</name>
             <type>Alert</type>
         </action>
-        <action>
-            <name>Set_Status_to_Rejected</name>
-            <type>FieldUpdate</type>
-        </action>
     </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <initialSubmissionActions>
