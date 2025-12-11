@@ -8,7 +8,6 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <controllingField>Status</controllingField>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
@@ -22,13 +21,5 @@
                 <label>Unauthorized</label>
             </value>
         </valueSetDefinition>
-        <valueSettings>
-            <controllingFieldValue>Rejected</controllingFieldValue>
-            <valueName>Documents_Missing</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Rejected</controllingFieldValue>
-            <valueName>Unauthorized</valueName>
-        </valueSettings>
     </valueSet>
 </CustomField>
