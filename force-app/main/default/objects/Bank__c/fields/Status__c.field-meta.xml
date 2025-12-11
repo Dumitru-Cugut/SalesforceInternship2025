@@ -18,7 +18,7 @@ Bank Unauthorized - The case is rejected approved by the designated approvers.</
             <sorted>false</sorted>
             <value>
                 <fullName>Draft</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>Draft</label>
             </value>
             <value>
