@@ -13,7 +13,8 @@
         <field>Owner</field>
         <field>Status</field>
         <field>CreatedDate</field>
-        <field>Document_uploaded__c</field>
+        <field>Rejection_Reason__c</field>
+        <field>Bank__c</field>
     </approvalPageFields>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
@@ -108,6 +109,6 @@
     </initialSubmissionActions>
     <label>Case Approval Process</label>
     <processOrder>1</processOrder>
-    <recordEditability>AdminOnly</recordEditability>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
     <showApprovalHistory>true</showApprovalHistory>
 </ApprovalProcess>
