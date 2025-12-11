@@ -19,7 +19,7 @@
         </values>
         <values>
             <fullName>Draft</fullName>
-            <default>false</default>
+            <default>true</default>
         </values>
         <values>
             <fullName>Submitted for Approval</fullName>
